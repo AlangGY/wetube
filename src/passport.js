@@ -18,7 +18,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: `http://localhost:3000${routes.githubCallback}`,
+      callbackURL: `https://boiling-plateau-57903.herokuapp.com${routes.githubCallback}`,
     },
     githubLoginCallback
   )
@@ -30,7 +30,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-      callbackURL: `http://localhost:3000${routes.facebookCallback}`,
+      callbackURL: `https://boiling-plateau-57903.herokuapp.com${routes.facebookCallback}`,
     },
     facebookLoginCallback
   )
@@ -42,7 +42,7 @@ passport.use(
     {
       clientID: process.env.KAKAO_CLIENT_ID,
       clientSecret: process.env.KAKO_CLIENT_SECRET, // clientSecret을 사용하지 않는다면 넘기지 말거나 빈 스트링을 넘길 것
-      callbackURL: `http://localhost:3000${routes.kakaoCallback}`,
+      callbackURL: `https://boiling-plateau-57903.herokuapp.com${routes.kakaoCallback}`,
     },
     kakaoLoginCallback
   )
