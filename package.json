@@ -1,5 +1,5 @@
 {
-  "name": "wetube",
+  "name": "alangtube",
   "version": "1.0.0",
   "description": "Cloning Youtube with VanillaJS and NodeJS",
   "main": "index.js",
