@@ -12,8 +12,7 @@
     "copyRest": "cp -R src/views build && cp -R src/static build && cp -R src/images build",
     "prebuild": "rm -rf build",
     "build": "npm run build:server && npm run build:assets && npm run copyRest ",
-    "start": "cd build &&node init.js",
-    "prestart": "npm run build"
+    "start": "npm run build && cd build &&node init.js"
   },
   "author": "",
   "license": "ISC",
