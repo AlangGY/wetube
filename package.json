@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "cd src && nodemon --exec babel-node init.js --delay 2",
-    "dev:assets": "cross-env WEBPACK_ENV=development src/webpack --watch",
-    "build:assets": " cross-env WEBPACK_ENV=production src/webpack",
+    "dev:assets": "cd src cross-env WEBPACK_ENV=development src/webpack --watch",
+    "build:assets": "cd src cross-env WEBPACK_ENV=production webpack",
     "build:server": "babel src --out-dir build --ignore src/assets --ignore src/static --ignore src/webpack.config.js",
     "copyRest": "cp -R src/views build && cp -R src/static build && cp src/.env build && cp -R src/images build",
     "prebuild": "rm -rf build",
