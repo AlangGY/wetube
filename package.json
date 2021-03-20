@@ -19,7 +19,6 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "babel-cli": "^6.26.0",
     "css-loader": "^5.1.1",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
