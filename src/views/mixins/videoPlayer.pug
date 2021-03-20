@@ -1,0 +1,21 @@
+mixin videoPlayer(video = {})
+    .video__player#js-videoPlayer
+        .video__player-video
+            video(src=video.src)
+            .video__player-controls#js-videoControls
+                .video__player-columns
+                    .video__player-volume
+                        input.video__player-volumeBar(type="range" min=0 max=1 value=0.5 step=0.02)#js-videoVolumeBar 
+                        span.video__player-button#js-videoVolume
+                            <i class="fas fa-volume-up"></i>
+                    span.video__player-time#js-currentTime 00:00
+                    span.video__player-time / 
+                    span.video__player-time#js-totalTime 00:00
+                .video__player-columns
+                    span.video__player-button#js-videoPlay
+                        <i class="fas fa-play"></i>
+                .video__player-columns
+                    span.video__player-button#js-videoFullscreen
+                        <i class="fas fa-expand"></i>
+
+                input.video__player-timeBar(type="range" min=0 max=100 value=0)#js-videoTimeBar

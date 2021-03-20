@@ -1,0 +1,49 @@
+extends layouts/main.pug
+include mixins/videoPlayer
+
+block content
+    #js-variables
+        if loggedUser
+            span#js-currentUserName=loggedUser.name
+    .video_detail
+        .video__block
+            +videoPlayer({
+                src: video.fileUrl
+            })
+            .video__info
+                h5.video__title=video.title
+                .video__sub
+                    span.video__views= `조회수 : ${video.views}`
+                    if loggedUser && video.creator.id === loggedUser.id
+                        a(href=routes.video_edit(video.id)) 수정
+                .video__author
+                    img(src=video.creator.avatarUrl)
+                    a(href=`${routes.users}${routes.user_detail(video.creator.id)}`)= `${video.creator.name}`
+                p.video__description=video.description
+        
+        .video__comments 
+            if video.comments.length === 1
+                span.video__comment-number#js-commentNumber 1
+                | comment 
+            else
+                span.video__comment-number#js-commentNumber #{video.comments.length}
+                | comments
+            .video__comments-input
+                if loggedUser
+                    img(src=loggedUser.avatarUrl)#js-commentInputImage
+                    form.video__comments-form#js-commentForm
+                        input(type="text" placeholder="댓글 입력" name="comment")#js-commentInput
+            ul.video__comments-texts#js-commentsText
+                each comment in video.comments.reverse()
+                    .video__comments-text
+                        .video__comments-column
+                            img(src=comment.creator.avatarUrl)
+                        .video__comments-column
+                            .video__comments-info 
+                                span=comment.creator.name 
+                                span=`${String(comment.createAt.getFullYear()).slice(2)}.${comment.createAt.getMonth() < 10 ? `0${comment.createAt.getMonth()}` : comment.createAt.getMonth()}.${comment.createAt.getDate() < 10 ? `0${comment.createAt.getDate()}` : comment.createAt.getDate()} / ${comment.createAt.getHours() < 10 ? `0${comment.createAt.getHours()}` : comment.createAt.getHours()}:${comment.createAt.getMinutes() < 10 ? `0${comment.createAt.getMinutes()}` : comment.createAt.getMinutes()}`  
+                            li=comment.text
+                            if loggedUser && comment.creator._id == loggedUser.id 
+                                button.video__comments-delete(comment_id=`${comment.id}`).js-commentDelete X
+
+            

@@ -1,0 +1,22 @@
+extends layouts/main.pug
+
+block content
+    .form-container 
+        .editProfile-container
+            form(action=`${routes.users}${routes.edit_profile}`, method="post", enctype="multipart/form-data")
+                div 
+                .editProfile__title 프로필 수정
+                .editProfile__input
+                    .editProfile__avatar
+                        label(for="avatar") 프로필
+                        input(type="file", id="avatar", name="avatar" accept="image/*")
+                    .editProfile__name
+                        label(for="name") 이름
+                        input(type="text", id="name" placeholder="Name", name="name" value=loggedUser.name)
+                    .editProfile__email
+                        label(for="email") 이메일
+                        input(type="email", id="email" placeholder="Email" name="email" value=loggedUser.email)
+                    .editProfile__buttons
+                        input.editProfile__update(type="submit", value="Update Profile")
+                        a.editProfile_changePassword(href=`${routes.users}${routes.change_password}`) Change Password
+

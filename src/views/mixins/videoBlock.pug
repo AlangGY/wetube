@@ -1,0 +1,6 @@
+mixin videoBlock(video = {})
+    .videoBlock 
+        a(href=routes.video_detail(video.id))
+            video.videoBlock__thumbnail(src=video.fileUrl) 
+            h4.videoBlock__title= video.title
+            h6.videoBlock__views= `${video.views} Views` 

@@ -1,0 +1,19 @@
+extends layouts/main.pug
+
+block content
+    .form-container__edit
+        form(action=`${routes.videos}${routes.video_upload}`, method="post", enctype="multipart/form-data")
+            .record-container 
+                video#js-recordVideo
+                button#js-recordButton Start Recording 
+            .video
+                label(for="video") Video File
+                input(type="file", id="video", name="video", required= true, accept="video/*")
+            .title
+                label(for="title") 제목
+                input(type="text", id="title" placeholder="Title", name="title", required=true)
+            .description
+                label(for="description") 설명
+                textarea(name="description", id="description" placeholder="Description",style="resize: none", required=true)
+            .button
+                input(type="submit", value="Upload")

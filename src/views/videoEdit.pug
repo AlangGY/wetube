@@ -1,0 +1,16 @@
+extends layouts/main.pug
+
+block content
+    .form-container__edit
+        form(action=routes.video_edit(video.id), method="post")
+            .video__player
+                video(src=`/${video.fileUrl}`)
+            .title
+                label(for="title") 제목
+                input(type="text", id="title" placeholder="Title", name="title", value=video.title, required=true)
+            .description
+                label(for="description") 설명
+                textarea(name="description", id="description" placeholder="Description",style="resize: none", required=true)=video.description
+            .button
+                input(type="submit", value="수정")
+                a.form-container__link.form-container__link--delete(href=`${routes.video_delete(video.id)}`) 삭제

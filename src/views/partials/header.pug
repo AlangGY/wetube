@@ -1,0 +1,21 @@
+header.header 
+    .header__column
+        form(action=routes.search, method="get")
+            input(type="text", placeholder="검색", name="term")
+    .header__column
+        a(href=routes.home)
+            img(src="/images/logos/logo2.png")
+    .header__column
+        ul 
+            if !loggedUser
+                li 
+                    a(href=routes.join) JOIN 
+                li 
+                    a(href=routes.login) LOG IN
+            else 
+                li 
+                    a(href=`${routes.videos}${routes.video_upload}`) Upload 
+                li 
+                    a(href=`${routes.users}${routes.me}`) Profile
+                li 
+                    a(href=routes.logout) Logout

@@ -1,0 +1,23 @@
+extends layouts/main.pug
+
+block content
+    .form-container 
+        form(action=routes.join, method="post")
+            span.form_title #{siteName}
+            span.form_description 계정 생성
+            .form_block
+                .name
+                    label(for="name") 이름
+                    input(type="text", id="name" name="name", placeholder="Full Name" ,required=true)
+                .email 
+                    label(for="email") 이메일 주소 
+                    input(type="email", id="email" name="email", placeholder="Email" ,required=true)
+                .password 
+                    label(for="password") 비밀번호 
+                    input(type="password", id="password" name="password", placeholder="Password" ,required=true)
+                .verify_password
+                    label(for="verify-password") 비밀번호 확인 
+                    input(type="password", id="verify-password" name="password2", placeholder="Verify Password" ,required=true)
+                input(type="submit", value="계정 생성")
+        include partials/socialLogin
+
