@@ -1,7 +1,7 @@
 mixin videoPlayer(video = {})
     .video__player#js-videoPlayer
         .video__player-video
-            video(src=video.src)
+            video(src=video.src type="video/mp4")
             .video__player-controls#js-videoControls
                 .video__player-columns
                     .video__player-volume
