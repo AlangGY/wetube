@@ -10,7 +10,12 @@ import {
   video_detail,
   video_edit,
 } from "../controllers/videoController";
-import { onlyPrivate, uploadVideo } from "../middlewares";
+import {
+  onlyPrivate,
+  uploadVideo,
+  uploadLocal,
+  convertVideo,
+} from "../middlewares";
 import routes from "../routes";
 
 const videoRouter = express.Router();
@@ -20,7 +25,9 @@ videoRouter.get(routes.video_upload, onlyPrivate, getVideo_upload);
 videoRouter.post(
   routes.video_upload,
   onlyPrivate,
-  uploadVideo,
+  uploadLocal,
+  convertVideo,
+  // uploadVideo,
   postVideo_upload
 );
 
