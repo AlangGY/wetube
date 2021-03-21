@@ -37,7 +37,7 @@ const ffmpegVideo = async (file) => {
       .on("error", (err) => console.log(`Can't Process : ${err.message}`))
       .save(`localVideo/${file.filename}.mp4`)
       .on("end", () => {
-        console.log("finished!");
+        console.log("finished!!");
         resolve();
       });
   });
