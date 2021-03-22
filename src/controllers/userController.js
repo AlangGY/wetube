@@ -90,7 +90,7 @@ export const kakaoLoginCallback = async (_, __, profile, done) => {
   try {
     const user = await User.findOne({ kakaoId: id });
     if (user) {
-      user.email = kakao_account_email;
+      user.email = kakao_account.email;
       user.save();
       return done(null, user);
     } else {
