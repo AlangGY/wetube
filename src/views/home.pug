@@ -5,7 +5,7 @@ block content
     .videos__block
         .videos__description Videos
         .videos 
-            each video in videos 
+            each video in videos.reverse() 
                 +videoBlock({
                     id : video.id,
                     title: video.title,

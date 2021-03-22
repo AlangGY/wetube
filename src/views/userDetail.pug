@@ -15,17 +15,17 @@ block content
                 h4=user.email
             if loggedUser && user.id === loggedUser.id
                 .profile__buttons 
-                    a.profile__edit(href=`${routes.users}${routes.edit_profile}`) edit 
-                    a.profile__changePassword(href=`${routes.users}${routes.change_password}`) change password
-                    a.profile__delete(href=`${routes.users}${routes.delete_profile}`) Delete
-            .profile__videos 
-                    .videos__block
-                        .videos__description Videos
-                        .videos 
-                            each video in user.videos 
-                                +videoBlock({
-                                    id : video.id,
-                                    title: video.title,
-                                    views: video.views,
-                                    fileUrl: video.fileUrl
-                                })
+                    a.profile__edit(href=`${routes.users}${routes.edit_profile}`) 프로필 수정 
+                    a.profile__changePassword(href=`${routes.users}${routes.change_password}`) 비밀번호 변경
+                    a.profile__delete(href=`${routes.users}${routes.delete_profile}`) 계정 삭제
+        .profile__videos 
+                .videos__block
+                    .videos__description Videos
+                    .videos 
+                        each video in user.videos 
+                            +videoBlock({
+                                id : video.id,
+                                title: video.title,
+                                views: video.views,
+                                fileUrl: video.fileUrl
+                            })
