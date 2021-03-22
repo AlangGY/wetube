@@ -136,6 +136,7 @@ export const user_detail = async (req, res) => {
     console.log(user);
     res.render("userDetail", { pageTitle: "User_detail", user });
   } catch (error) {
+    console.log(error);
     res.redirect(routes.home);
   }
 };

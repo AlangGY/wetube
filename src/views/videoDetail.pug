@@ -37,10 +37,12 @@ block content
                 each comment in video.comments.reverse()
                     .video__comments-text
                         .video__comments-column
-                            img(src=comment.creator.avatarUrl)
+                            a(href=`${routes.users}${routes.user_detail(comment.creator.id)}`)
+                                img(src=comment.creator.avatarUrl)
                         .video__comments-column
                             .video__comments-info 
-                                span=comment.creator.name 
+                                a(href=`${routes.users}${routes.user_detail(comment.creator.id)}`)
+                                    span=comment.creator.name 
                                 span=`${String(comment.createAt.getFullYear()).slice(2)}.${comment.createAt.getMonth() < 10 ? `0${comment.createAt.getMonth()}` : comment.createAt.getMonth()}.${comment.createAt.getDate() < 10 ? `0${comment.createAt.getDate()}` : comment.createAt.getDate()} / ${comment.createAt.getHours() < 10 ? `0${comment.createAt.getHours()}` : comment.createAt.getHours()}:${comment.createAt.getMinutes() < 10 ? `0${comment.createAt.getMinutes()}` : comment.createAt.getMinutes()}`  
                             li=comment.text
                             if loggedUser && comment.creator._id == loggedUser.id 
