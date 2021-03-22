@@ -32,7 +32,6 @@ const ffmpegVideo = async (file) => {
   const command = new Promise((resolve, reject) => {
     Ffmpeg(file.path)
       .format("mp4")
-      .output(`output.mp4`)
       .on("start", () => console.log("Start Convert!"))
       .on("error", (err) => console.log(`Can't Process : ${err.message}`))
       .save(`localVideo/${file.filename}.mp4`)
@@ -47,15 +46,17 @@ const ffmpegVideo = async (file) => {
 export const convertVideo = async (req, res, next) => {
   try {
     const { file } = req;
-    await ffmpegVideo(file).then(async () => {
+    const localpath = file.path;
+    ffmpegVideo(file).then(async () => {
       const readFile = util.promisify(fs.readFile);
       const data = await readFile(`localVideo/${file.filename}.mp4`);
       await uploadS3(data, file.filename);
-      fs.unlinkSync(file.path);
+      fs.unlinkSync(localpath);
       fs.unlinkSync(`localVideo/${file.filename}.mp4`);
       file.path = `https://alangtube.s3.ap-northeast-2.amazonaws.com/video/${file.filename}.mp4`;
-      next();
     });
+    file.path = `https://alangtube.s3.ap-northeast-2.amazonaws.com/video/${file.filename}.mp4`;
+    next();
   } catch (err) {
     console.log(err);
   }

@@ -3,6 +3,7 @@ import routes from "../routes";
 import Video from "../models/video";
 import Comment from "../models/comment";
 import { comment } from "postcss";
+
 //Global
 export const home = async (req, res) => {
   try {

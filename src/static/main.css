@@ -1072,9 +1072,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1436,9 +1436,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1555,9 +1555,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1602,9 +1602,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1630,8 +1630,248 @@ footer {
 }
 
 @media screen and (max-device-width: 480px) {
-  .form-container__edit .record-container {
-    display: none;
+  .form-container__edit form {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0 5px;
+    width: 95vw;
+    height: 90vh;
+  }
+  .form-container__edit form .record-container {
+    width: 80%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-container__edit form .record-container video {
+    width: 100%;
+    background-color: black;
+    margin-bottom: 20px;
+  }
+  .form-container__edit form .record-container button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    text-align: center;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+       -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #4e4e7a;
+    color: white;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .form-container__edit form .record-container button:hover {
+    opacity: 0.9;
+  }
+  .form-container__edit form .record-container button:active {
+    opacity: 0.6;
+  }
+}
+@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+  .form-container__edit form .record-container button {
+    font-size: 40px;
+    height: 90px;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  .form-container__edit form .title,
+.form-container__edit form .description,
+.form-container__edit form .video {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-self: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .form-container__edit form .title label,
+.form-container__edit form .description label,
+.form-container__edit form .video label {
+    font-size: 40px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .form-container__edit form .title input,
+.form-container__edit form .title textarea,
+.form-container__edit form .description input,
+.form-container__edit form .description textarea,
+.form-container__edit form .video input,
+.form-container__edit form .video textarea {
+    font-size: 40px;
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+  }
+  .form-container__edit form .title textarea,
+.form-container__edit form .description textarea,
+.form-container__edit form .video textarea {
+    height: 200px;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  .form-container__edit form .button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-container__edit form .button input,
+.form-container__edit form .button a {
+    margin-right: 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    text-align: center;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+       -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #4e4e7a;
+    color: white;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .form-container__edit form .button input:hover,
+.form-container__edit form .button a:hover {
+    opacity: 0.9;
+  }
+  .form-container__edit form .button input:active,
+.form-container__edit form .button a:active {
+    opacity: 0.6;
+  }
+}
+@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+  .form-container__edit form .button input,
+.form-container__edit form .button a {
+    font-size: 40px;
+    height: 90px;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  .form-container__edit form .button a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    text-align: center;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+       -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #813737;
+    color: white;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .form-container__edit form .button a:hover {
+    opacity: 0.9;
+  }
+  .form-container__edit form .button a:active {
+    opacity: 0.6;
+  }
+}
+@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+  .form-container__edit form .button a {
+    font-size: 40px;
+    height: 90px;
   }
 }
 .user-profile {
@@ -1749,9 +1989,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1793,9 +2033,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1837,9 +2077,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1928,9 +2168,9 @@ footer {
             align-items: center;
     text-decoration: none;
     text-align: center;
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
        -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -1974,9 +2214,9 @@ footer {
             align-items: center;
     text-decoration: none;
     text-align: center;
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
        -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -2020,9 +2260,9 @@ footer {
             align-items: center;
     text-decoration: none;
     text-align: center;
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
        -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -2167,9 +2407,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -2211,9 +2451,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -2321,9 +2561,9 @@ footer {
           align-items: center;
   text-decoration: none;
   text-align: center;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
