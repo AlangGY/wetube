@@ -8,7 +8,10 @@ block content
             .profile__title
                 h3 유저 정보       
             .profile__image
-                img.avatar(src=user.avatarUrl)
+                if (user.avatarUrl)
+                    img.avatar(src=user.avatarUrl)
+                if (!user.avatarUrl)
+                    img.avatar(src="/images/profiles/defaultProfile.png")
             .profile__username 
                 h4=user.name
             .profile__email 

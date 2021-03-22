@@ -15013,6 +15013,36 @@ if (commentForm) {
 
 /***/ }),
 
+/***/ "./assets/js/uploadVideo.js":
+/*!**********************************!*\
+  !*** ./assets/js/uploadVideo.js ***!
+  \**********************************/
+/***/ (() => {
+
+var uploadBtn = document.querySelector("#js-uploadBtn");
+var uploadFile = document.querySelector("#video");
+var uploadTitle = document.querySelector("#title");
+var disabledBool = false;
+
+function disableBtn(event) {
+  if (disabledBool) {
+    event.target.disabled = true;
+  } else if (uploadFile.value != "" && uploadTitle.value != "") {
+    event.target.value = "업로드중";
+    disabledBool = true;
+  }
+}
+
+function init() {
+  uploadBtn.addEventListener("click", disableBtn);
+}
+
+if (uploadBtn) {
+  init();
+}
+
+/***/ }),
+
 /***/ "./assets/js/videoPlayer.js":
 /*!**********************************!*\
   !*** ./assets/js/videoPlayer.js ***!
@@ -15029,22 +15059,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var video, playButton, volumeButton, volumeBar, fullscreenButton, videoCurrentTime, videoTotalTime, videoTimeBar, videoControls;
 var videoPlayer = document.querySelector("#js-videoPlayer");
+var videoPlayerDetail = document.querySelector("#js-videoPlayerDetail");
+var video = document.querySelector("video");
+var playButton = document.querySelector("#js-videoPlay");
+var volumeButton = document.querySelector("#js-videoVolume");
+var volumeBar = document.querySelector("#js-videoVolumeBar");
+var fullscreenButton = document.querySelector("#js-videoFullscreen");
+var videoCurrentTime = document.querySelector("#js-currentTime");
+var videoTotalTime = document.querySelector("#js-totalTime");
+var videoTimeBar = document.querySelector("#js-videoTimeBar");
+var videoControls = document.querySelector("#js-videoControls");
+var videoLoadingDiv = document.querySelector("#js-videoLoading");
+var videoLoadingSpan = document.querySelector("#js-videoLoadingSpan");
+var videoPlayed = false; // Error on Video
 
-if (videoPlayer) {
-  video = videoPlayer.querySelector("video");
-  playButton = videoPlayer.querySelector("#js-videoPlay");
-  volumeButton = videoPlayer.querySelector("#js-videoVolume");
-  volumeBar = videoPlayer.querySelector("#js-videoVolumeBar");
-  fullscreenButton = videoPlayer.querySelector("#js-videoFullscreen");
-  videoCurrentTime = videoPlayer.querySelector("#js-currentTime");
-  videoTotalTime = videoPlayer.querySelector("#js-totalTime");
-  videoTimeBar = videoPlayer.querySelector("#js-videoTimeBar");
-  videoControls = videoPlayer.querySelector("#js-videoControls");
-}
+var errorVideo = function errorVideo() {
+  if (video.error) {
+    console.log("error!");
+    videoLoadingDiv.style.opacity = 1;
+    videoLoadingSpan.hidden = false;
+  }
+}; // Register View
 
-var videoPlayed = false; // Register View
 
 var registerView = function registerView() {
   var videoId = window.location.href.split("/videos/")[1];
@@ -15299,8 +15336,12 @@ function init() {
   video.volume = volumeBar.value;
 }
 
-if (videoPlayer) {
+if (videoPlayerDetail) {
   init();
+}
+
+if (videoPlayer) {
+  setTimeout(errorVideo, 1000);
 }
 
 /***/ }),
@@ -15736,6 +15777,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videoRecorder__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_videoRecorder__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _postComment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./postComment */ "./assets/js/postComment.js");
 /* harmony import */ var _deleteComment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./deleteComment */ "./assets/js/deleteComment.js");
+/* harmony import */ var _uploadVideo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./uploadVideo */ "./assets/js/uploadVideo.js");
+/* harmony import */ var _uploadVideo__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_uploadVideo__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 

@@ -392,6 +392,94 @@ footer {
   color: gray;
 }
 
+.videoBlock {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+.videoBlock a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+}
+.videoBlock a .video__loading {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+.videoBlock a .video__loading span {
+  font-size: 50px;
+  color: white;
+}
+.videoBlock a video {
+  background-color: #e9e9fc;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+.videoBlock h4,
+.videoBlock h6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5px;
+}
+.videoBlock h4 {
+  font-size: 15px;
+}
+.videoBlock h6 {
+  font-size: 12px;
+}
+
 @media screen and (max-device-width: 480px) {
   .videoBlock {
     width: 100%;
@@ -423,67 +511,6 @@ footer {
   .videoBlock a {
     width: 100%;
     height: 80%;
-    text-decoration: none;
-    color: black;
-  }
-  .videoBlock a video {
-    background-color: #e9e9fc;
-    width: 100%;
-    height: 100%;
-    outline: none;
-  }
-  .videoBlock h4,
-.videoBlock h6 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-top: 5px;
-  }
-  .videoBlock h4 {
-    font-size: 15px;
-  }
-  .videoBlock h6 {
-    font-size: 12px;
-  }
-}
-@media screen and (min-device-width: 481px) {
-  .videoBlock {
-    width: 100%;
-    height: 200px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: black;
-  }
-  .videoBlock a {
-    width: 100%;
-    height: 100%;
     text-decoration: none;
     color: black;
   }
@@ -810,10 +837,36 @@ footer {
   height: 100%;
   position: relative;
 }
+.video__player .video__player-video .video__loading {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+}
+.video__player .video__player-video .video__loading span {
+  font-size: 50px;
+  color: white;
+}
 .video__player .video__player-video video {
   background-color: #e9e9fc;
   width: 100%;
-  height: 500px;
   max-height: 100%;
 }
 .video__player .video__player-video .video__player-controls {
