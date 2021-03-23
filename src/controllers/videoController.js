@@ -2,7 +2,6 @@
 import routes from "../routes";
 import Video from "../models/video";
 import Comment from "../models/comment";
-import { comment } from "postcss";
 import { convertTZ } from "../middlewares";
 
 //Global
@@ -69,6 +68,12 @@ export const video_detail = async (req, res) => {
         path: "comments",
         populate: { path: "creator", model: "user" },
       });
+    for (const num in video.comments) {
+      video.comments[num].createAt = convertTZ(
+        video.comments[num],
+        "Asia/Seoul"
+      );
+    }
     res.render("videoDetail", { pageTitle: `${video.title}`, video });
   } catch (error) {
     console.log(error);
