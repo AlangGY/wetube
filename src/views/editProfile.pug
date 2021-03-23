@@ -17,6 +17,6 @@ block content
                         label(for="email") 이메일
                         input(type="email", id="email" placeholder="Email" name="email" value=loggedUser.email)
                     .editProfile__buttons
-                        input.editProfile__update(type="submit", value="Update Profile")
-                        a.editProfile_changePassword(href=`${routes.users}${routes.change_password}`) Change Password
+                        input.editProfile__update(type="submit", value="프로필 수정")
+                        a.editProfile_changePassword(href=`${routes.users}${routes.change_password}`) 비밀번호 변경
 

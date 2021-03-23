@@ -542,7 +542,7 @@ footer {
   font-size: 12px;
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .videoBlock {
     height: 100%;
   }
@@ -814,7 +814,7 @@ footer {
   padding: 0;
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .social-login {
     margin-top: 50px;
     -webkit-box-orient: vertical;
@@ -1073,7 +1073,7 @@ footer {
   grid-auto-rows: 300px;
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .videos__block .videos {
     grid-template-rows: 500px;
     grid-template-columns: 800px;
@@ -1173,7 +1173,7 @@ footer {
 .video_detail .video__block .video__info .video__sub a:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .video_detail .video__block .video__info .video__sub a {
     font-size: 40px;
     height: 70px;
@@ -1315,7 +1315,7 @@ footer {
 .video_detail .video__comments .video__comments-input button:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .video_detail .video__comments .video__comments-input button {
     font-size: 40px;
     height: 70px;
@@ -1466,7 +1466,7 @@ footer {
   opacity: 0.5;
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .video_detail {
     display: grid;
     width: 95vw;
@@ -1622,7 +1622,7 @@ footer {
 .form-container__edit form .record-container button:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .record-container button {
     font-size: 40px;
     height: 70px;
@@ -1743,7 +1743,7 @@ footer {
 .form-container__edit form .button a:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .button input,
 .form-container__edit form .button a {
     font-size: 40px;
@@ -1788,14 +1788,14 @@ footer {
 .form-container__edit form .button a:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .button a {
     font-size: 40px;
     height: 70px;
   }
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -1868,13 +1868,13 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) and (max-device-width: 800px) {
   .form-container__edit form .record-container button {
     font-size: 40px;
     height: 70px;
   }
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .title,
 .form-container__edit form .description,
 .form-container__edit form .video {
@@ -1926,7 +1926,7 @@ footer {
     height: 200px;
   }
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .button {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1987,14 +1987,14 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) and (max-device-width: 800px) {
   .form-container__edit form .button input,
 .form-container__edit form .button a {
     font-size: 40px;
     height: 70px;
   }
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .form-container__edit form .button a {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2034,7 +2034,7 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) and (max-device-width: 800px) {
   .form-container__edit form .button a {
     font-size: 40px;
     height: 70px;
@@ -2121,7 +2121,7 @@ footer {
   font-size: 23px;
 }
 .user-profile .profile__buttons {
-  width: 30vw;
+  width: 100vw;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -2175,7 +2175,7 @@ footer {
 .user-profile .profile__buttons a.profile__edit:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__edit {
     font-size: 40px;
     height: 70px;
@@ -2219,7 +2219,7 @@ footer {
 .user-profile .profile__buttons a.profile__changePassword:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__changePassword {
     font-size: 40px;
     height: 70px;
@@ -2263,7 +2263,7 @@ footer {
 .user-profile .profile__buttons a.profile__delete:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__delete {
     font-size: 40px;
     height: 70px;
@@ -2304,7 +2304,6 @@ footer {
     font-size: 40px;
   }
   .user-profile .profile__buttons {
-    width: 100vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     -webkit-box-align: center;
@@ -2355,7 +2354,7 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 480px) and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__edit {
     font-size: 40px;
     height: 70px;
@@ -2401,7 +2400,7 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 480px) and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__changePassword {
     font-size: 40px;
     height: 70px;
@@ -2447,7 +2446,7 @@ footer {
     opacity: 0.6;
   }
 }
-@media screen and (max-device-width: 480px) and (max-device-width: 480px) {
+@media screen and (max-device-width: 480px) and (max-device-width: 800px) {
   .user-profile .profile__buttons a.profile__delete {
     font-size: 40px;
     height: 70px;
@@ -2593,7 +2592,7 @@ footer {
 .editProfile-container .editProfile__input .editProfile__buttons input:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .editProfile-container .editProfile__input .editProfile__buttons input {
     font-size: 40px;
     height: 70px;
@@ -2637,7 +2636,7 @@ footer {
 .editProfile-container .editProfile__input .editProfile__buttons a:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .editProfile-container .editProfile__input .editProfile__buttons a {
     font-size: 40px;
     height: 70px;
@@ -2747,7 +2746,7 @@ footer {
 .changePassword-container .changePassword-inputs .changePassword-submit input:active {
   opacity: 0.6;
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 800px) {
   .changePassword-container .changePassword-inputs .changePassword-submit input {
     font-size: 40px;
     height: 70px;
