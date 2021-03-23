@@ -134,6 +134,50 @@ table {
   border-spacing: 0;
 }
 
+input,
+select,
+textarea,
+button {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=password],
+input[type=submit],
+input[type=search] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+input:checked[type=checkbox] {
+  background-color: #666;
+  -webkit-appearance: checkbox;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+input[type=file] {
+  -webkit-appearance: button;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 a:hover {
   opacity: 0.8;
 }
@@ -1179,7 +1223,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .video_detail .video__block .video__info .video__sub a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .video_detail .video__block .video__info .video__author {
@@ -1278,6 +1322,51 @@ footer {
      -moz-border-radius: 5px;
           border-radius: 5px;
   padding: 0;
+}
+.video_detail .video__comments .video__comments-input button {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  text-align: center;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #4e4e7a;
+  color: white;
+  height: 30px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+.video_detail .video__comments .video__comments-input button:hover {
+  opacity: 0.9;
+}
+.video_detail .video__comments .video__comments-input button:active {
+  opacity: 0.6;
+}
+@media screen and (max-device-width: 480px) {
+  .video_detail .video__comments .video__comments-input button {
+    font-size: 40px;
+    height: 70px;
+  }
 }
 .video_detail .video__comments .video__comments-texts {
   width: 100%;
@@ -1583,7 +1672,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .form-container__edit form .record-container button {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .form-container__edit form .video__player {
@@ -1705,7 +1794,7 @@ footer {
   .form-container__edit form .button input,
 .form-container__edit form .button a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .form-container__edit form .button a {
@@ -1749,7 +1838,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .form-container__edit form .button a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 
@@ -1829,7 +1918,7 @@ footer {
 @media screen and (max-device-width: 480px) and (max-device-width: 480px) {
   .form-container__edit form .record-container button {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 @media screen and (max-device-width: 480px) {
@@ -1949,7 +2038,7 @@ footer {
   .form-container__edit form .button input,
 .form-container__edit form .button a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 @media screen and (max-device-width: 480px) {
@@ -1995,7 +2084,7 @@ footer {
 @media screen and (max-device-width: 480px) and (max-device-width: 480px) {
   .form-container__edit form .button a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .user-profile {
@@ -2136,7 +2225,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__edit {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .user-profile .profile__buttons a.profile__changePassword {
@@ -2180,7 +2269,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__changePassword {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .user-profile .profile__buttons a.profile__delete {
@@ -2224,7 +2313,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__delete {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 
@@ -2316,7 +2405,7 @@ footer {
 @media screen and (max-device-width: 480px) and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__edit {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 @media screen and (max-device-width: 480px) {
@@ -2362,7 +2451,7 @@ footer {
 @media screen and (max-device-width: 480px) and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__changePassword {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 @media screen and (max-device-width: 480px) {
@@ -2408,7 +2497,7 @@ footer {
 @media screen and (max-device-width: 480px) and (max-device-width: 480px) {
   .user-profile .profile__buttons a.profile__delete {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .editProfile-container .editProfile__title {
@@ -2554,7 +2643,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .editProfile-container .editProfile__input .editProfile__buttons input {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 .editProfile-container .editProfile__input .editProfile__buttons a {
@@ -2598,7 +2687,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .editProfile-container .editProfile__input .editProfile__buttons a {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 
@@ -2708,7 +2797,7 @@ footer {
 @media screen and (max-device-width: 480px) {
   .changePassword-container .changePassword-inputs .changePassword-submit input {
     font-size: 40px;
-    height: 90px;
+    height: 70px;
   }
 }
 

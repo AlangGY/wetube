@@ -37,6 +37,7 @@ block content
                     img(src=loggedUser.avatarUrl)#js-commentInputImage
                     form.video__comments-form#js-commentForm
                         input(type="text" placeholder="댓글 입력" name="comment")#js-commentInput
+                        button(type="submit") 댓글
             ul.video__comments-texts#js-commentsText
                 each comment in video.comments.reverse()
                     .video__comments-text
