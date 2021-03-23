@@ -115,7 +115,7 @@ export const video_delete = async (req, res) => {
       throw Error();
     }
     await Video.findOneAndRemove({ _id: id });
-    await deleteVideoS3(video.fileUrl);
+    await deleteVideoS3(video.fileUrl, video.thumbnailUrl);
   } catch (error) {}
   res.redirect(routes.home);
 };

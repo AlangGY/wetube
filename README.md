@@ -30,6 +30,10 @@ Cloning Youtube with VanillaJS and NodeJS
 - [x] 업로드 버튼 중복클릭으로 여러번 올라가능 버그 fix
       => javascript 클릭시 disabled=True로 구현
 - [x] 삭제시 S3 데이터베이스에서도 데이터 삭제
+      => aws-sdk의 S3 deleteObject 이용하여 데이터 삭제
 - [x] 서버가 해외에있으므로 시간표시 오류
       =>Date의 toLocaleString함수 사용하여 Korea/Seoul Time Zone으로 변경.
-- [ ] 썸네일 제작
+- [x] 썸네일 제작
+      => fluent-ffmpeg의 screenshots()함수를 이용하여 video와 같은방식으로 구현
+- [x] 모바일에서 줌 금지
+      => viewport의 user-scalable=no 로 구현

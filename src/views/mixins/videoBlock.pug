@@ -4,6 +4,6 @@ mixin videoBlock(video = {})
             img.videoBlock__thumbnail(src=video.thumbnailUrl)
             video(src=video.fileUrl)
             .video__loading#js-videoLoading
-                span(hidden=true)#js-videoLoadingSpan 업로딩중..<br>기다려주세요
+                span(hidden=true).video__loading-span 업로딩중..<br>기다려주세요
             h4.videoBlock__title= video.title
             h6.videoBlock__views= `${video.views} Views` 

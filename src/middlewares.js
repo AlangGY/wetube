@@ -13,14 +13,28 @@ const s3 = new aws.S3({
 });
 // Delete From S3
 
-export const deleteVideoS3 = async (fileUrl) => {
-  const name = fileUrl.split("/video/")[1];
-  console.log(name);
+export const deleteVideoS3 = async (fileUrl, thumbnailUrl) => {
+  const videoName = fileUrl.split("/video/")[1];
+  const thumbnailName = thumbnailUrl.split("/thumbnails/")[1];
+  console.log(videoName);
+  console.log(thumbnailName);
   try {
     s3.deleteObject(
       {
         Bucket: "alangtube",
-        Key: `video/${name}`,
+        Key: `video/${videoName}`,
+      },
+      (err, data) => {
+        if (err) {
+          throw err;
+        }
+        console.log("s3 deleteObject ", data);
+      }
+    );
+    s3.deleteObject(
+      {
+        Bucket: "alangtube",
+        Key: `video/thumbnails/${thumbnailName}`,
       },
       (err, data) => {
         if (err) {
@@ -57,14 +71,16 @@ const uploadS3 = async (videoData, thumbnailData, filename) => {
       ACL: "public-read",
     })
     .promise();
-  console.log("Uploaded!");
+  console.log(
+    ` Video: ${videoName} , Thumbnail: ${thumbnailName} is Uploaded!`
+  );
 };
 // ffmpeg
 const ffmpegVideo = async (file) => {
   const command = new Promise((resolve, reject) => {
     Ffmpeg(file.path)
       .format("mp4")
-      .on("start", () => console.log("Start Convert!"))
+      .on("start", () => console.log(`Starting ${file.filename} Convert!`))
       .on("error", (err) => console.log(`Can't Process : ${err.message}`))
       .save(`localVideo/${file.filename}.mp4`)
       .screenshots({
@@ -74,14 +90,14 @@ const ffmpegVideo = async (file) => {
         size: "720x480",
       })
       .on("end", () => {
-        console.log("finished!!");
+        console.log(`Converting ${file.filename} finished!!`);
         resolve();
       });
   });
   return command;
 };
 //  convert to mp4 with ffmpeg
-export const convertVideo = async (req, res, next) => {
+export const uploadVideo = async (req, res, next) => {
   try {
     const { file } = req;
     const localpath = file.path;
