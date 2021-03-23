@@ -2,7 +2,7 @@
 import routes from "../routes";
 import Video from "../models/video";
 import Comment from "../models/comment";
-import { convertTZ } from "../middlewares";
+import { convertTZ, deleteVideoS3 } from "../middlewares";
 
 //Global
 export const home = async (req, res) => {
@@ -41,7 +41,7 @@ export const getVideo_upload = (req, res) =>
 export const postVideo_upload = async (req, res) => {
   const {
     body: { title, description },
-    file: { path },
+    file: { path, thumbnailPath },
     user,
   } = req;
   console.log(req.file, req.body);
@@ -50,6 +50,7 @@ export const postVideo_upload = async (req, res) => {
     title,
     description,
     creator: user.id,
+    thumbnailUrl: thumbnailPath,
   });
   req.user.videos.push(newVideo.id);
   req.user.save();
@@ -68,12 +69,6 @@ export const video_detail = async (req, res) => {
         path: "comments",
         populate: { path: "creator", model: "user" },
       });
-    for (const num in video.comments) {
-      video.comments[num].createAt = convertTZ(
-        video.comments[num],
-        "Asia/Seoul"
-      );
-    }
     res.render("videoDetail", { pageTitle: `${video.title}`, video });
   } catch (error) {
     console.log(error);
@@ -120,6 +115,7 @@ export const video_delete = async (req, res) => {
       throw Error();
     }
     await Video.findOneAndRemove({ _id: id });
+    await deleteVideoS3(video.fileUrl);
   } catch (error) {}
   res.redirect(routes.home);
 };

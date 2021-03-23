@@ -1,7 +1,8 @@
 mixin videoPlayer(video = {})
     .video__player#js-videoPlayer
         .video__player-video#js-videoPlayerDetail
-            video(src=video.src type="video/mp4")
+            img(src=video.thumbnailUrl)#js-videoThumbnail
+            video(src=video.fileUrl type="video/mp4")
             .video__loading#js-videoLoading
                 span(hidden=true)#js-videoLoadingSpan 업로딩중..<br>기다려주세요
             .video__player-controls#js-videoControls

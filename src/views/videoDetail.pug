@@ -8,7 +8,8 @@ block content
     .video_detail
         .video__block
             +videoPlayer({
-                src: video.fileUrl
+                fileUrl: video.fileUrl,
+                thumbnailUrl : video.thumbnailUrl
             })
             .video__info
                 h5.video__title=video.title

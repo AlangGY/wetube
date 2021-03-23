@@ -15066,6 +15066,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var videoPlayer = document.querySelector("#js-videoPlayer");
 var videoPlayerDetail = document.querySelector("#js-videoPlayerDetail");
 var video = document.querySelector("video");
+var videoThumbnail = document.querySelector("#js-videoThumbnail");
 var playButton = document.querySelector("#js-videoPlay");
 var volumeButton = document.querySelector("#js-videoVolume");
 var volumeBar = document.querySelector("#js-videoVolumeBar");
@@ -15080,7 +15081,7 @@ var videoPlayed = false; // Error on Video
 
 var errorVideo = function errorVideo() {
   if (video.error) {
-    console.log("error!");
+    console.log("not loaded!");
     videoLoadingDiv.style.opacity = 1;
     videoLoadingSpan.hidden = false;
   }
@@ -15298,6 +15299,7 @@ function toggleVolume() {
 function playVideo() {
   if (video.paused) {
     video.play();
+    videoThumbnail.style.opacity = 0;
     playButton.innerHTML = '<i class="fas fa-pause"></i>';
 
     if (!videoPlayed) {

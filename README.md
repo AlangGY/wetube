@@ -29,6 +29,7 @@ Cloning Youtube with VanillaJS and NodeJS
 - [ ] 모바일 전용 videoPlayer UI 구현
 - [x] 업로드 버튼 중복클릭으로 여러번 올라가능 버그 fix
       => javascript 클릭시 disabled=True로 구현
-- [ ] 삭제시 S3 데이터베이스에서도 데이터 삭제
-- [ ] 서버가 해외에있으므로 시간표시 오류
+- [x] 삭제시 S3 데이터베이스에서도 데이터 삭제
+- [x] 서버가 해외에있으므로 시간표시 오류
+      =>Date의 toLocaleString함수 사용하여 Korea/Seoul Time Zone으로 변경.
 - [ ] 썸네일 제작

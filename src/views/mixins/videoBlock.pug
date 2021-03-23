@@ -1,7 +1,8 @@
 mixin videoBlock(video = {})
     .videoBlock#js-videoPlayer
         a(href=routes.video_detail(video.id))
-            video.videoBlock__thumbnail(src=video.fileUrl)
+            img.videoBlock__thumbnail(src=video.thumbnailUrl)
+            video(src=video.fileUrl)
             .video__loading#js-videoLoading
                 span(hidden=true)#js-videoLoadingSpan 업로딩중..<br>기다려주세요
             h4.videoBlock__title= video.title

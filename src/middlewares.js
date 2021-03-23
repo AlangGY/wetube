@@ -6,26 +6,58 @@ import Ffmpeg from "fluent-ffmpeg";
 import util from "util";
 import fs from "fs";
 
-//  uploadtoS3
 const s3 = new aws.S3({
   accessKeyId: process.env.AWS_KEY,
   secretAccessKey: process.env.AWS_SECRET_KEY,
   region: "ap-northeast-2",
 });
+// Delete From S3
 
-const uploadS3 = async (data, filename) => {
-  const name = `${filename}.mp4`;
+export const deleteVideoS3 = async (fileUrl) => {
+  const name = fileUrl.split("/video/")[1];
+  console.log(name);
+  try {
+    s3.deleteObject(
+      {
+        Bucket: "alangtube",
+        Key: `video/${name}`,
+      },
+      (err, data) => {
+        if (err) {
+          throw err;
+        }
+        console.log("s3 deleteObject ", data);
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//  uploadtoS3
+
+const uploadS3 = async (videoData, thumbnailData, filename) => {
+  const videoName = `${filename}.mp4`;
+  const thumbnailName = `thumbnail-${filename}.png`;
   await s3
     .putObject({
-      Key: name,
+      Key: videoName,
       Bucket: "alangtube/video",
       ContentType: "video/mp4",
-      Body: data,
+      Body: videoData,
+      ACL: "public-read",
+    })
+    .promise();
+  await s3
+    .putObject({
+      Key: thumbnailName,
+      Bucket: "alangtube/video/thumbnails",
+      ContentType: "image/png",
+      Body: thumbnailData,
       ACL: "public-read",
     })
     .promise();
   console.log("Uploaded!");
-  return name;
 };
 // ffmpeg
 const ffmpegVideo = async (file) => {
@@ -35,6 +67,12 @@ const ffmpegVideo = async (file) => {
       .on("start", () => console.log("Start Convert!"))
       .on("error", (err) => console.log(`Can't Process : ${err.message}`))
       .save(`localVideo/${file.filename}.mp4`)
+      .screenshots({
+        filename: `thumbnail-${file.filename}.png`,
+        folder: `localVideo/`,
+        timestamps: [`20%`],
+        size: "720x480",
+      })
       .on("end", () => {
         console.log("finished!!");
         resolve();
@@ -49,13 +87,18 @@ export const convertVideo = async (req, res, next) => {
     const localpath = file.path;
     ffmpegVideo(file).then(async () => {
       const readFile = util.promisify(fs.readFile);
-      const data = await readFile(`localVideo/${file.filename}.mp4`);
-      await uploadS3(data, file.filename);
+      const videoData = await readFile(`localVideo/${file.filename}.mp4`);
+      const thumbnailData = await readFile(
+        `localVideo/thumbnail-${file.filename}.png`
+      );
+      await uploadS3(videoData, thumbnailData, file.filename);
+      fs.unlinkSync(`localVideo/thumbnail-${file.filename}.png`);
       fs.unlinkSync(localpath);
       fs.unlinkSync(`localVideo/${file.filename}.mp4`);
       file.path = `https://alangtube.s3.ap-northeast-2.amazonaws.com/video/${file.filename}.mp4`;
     });
     file.path = `https://alangtube.s3.ap-northeast-2.amazonaws.com/video/${file.filename}.mp4`;
+    file.thumbnailPath = `https://alangtube.s3.ap-northeast-2.amazonaws.com/video/thumbnails/thumbnail-${file.filename}.png`;
     next();
   } catch (err) {
     console.log(err);
