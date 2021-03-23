@@ -102,6 +102,8 @@ export const onlyPrivate = (req, res, next) => {
   }
 };
 
+// Date
+
 export const formatDate = (date) => {
   return `${String(date.getFullYear()).slice(2)}.${
     date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth()
@@ -110,3 +112,11 @@ export const formatDate = (date) => {
   }:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}`;
   // => YY.MM.DD/HH:MM
 };
+
+export function convertTZ(date, tzString) {
+  return new Date(
+    (typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {
+      timeZone: tzString,
+    })
+  );
+}

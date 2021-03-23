@@ -14910,11 +14910,9 @@ if (deleteButtons) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../routes */ "./routes.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 var commentForm = document.querySelector("#js-commentForm");
@@ -14923,8 +14921,14 @@ var commentInputImage = document.querySelector("#js-commentInputImage");
 var commentNumber = document.querySelector("#js-commentNumber");
 var currentUserName = document.querySelector("#js-currentUserName");
 
+function convertTZ(date, tzString) {
+  return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {
+    timeZone: tzString
+  }));
+}
+
 var getCurrentTime = function getCurrentTime() {
-  var currentTime = new Date();
+  var currentTime = convertTZ(new Date(), "Asia/Seoul");
   return "".concat(String(currentTime.getFullYear()).slice(2), ".").concat(currentTime.getMonth() < 10 ? "0".concat(currentTime.getMonth()) : currentTime.getMonth(), ".").concat(currentTime.getDate() < 10 ? "0".concat(currentTime.getDate()) : currentTime.getDate(), " / ").concat(currentTime.getHours() < 10 ? "0".concat(currentTime.getHours()) : currentTime.getHours(), ":").concat(currentTime.getMinutes() < 10 ? "0".concat(currentTime.getMinutes()) : currentTime.getMinutes());
 };
 

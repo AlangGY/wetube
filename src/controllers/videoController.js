@@ -3,6 +3,7 @@ import routes from "../routes";
 import Video from "../models/video";
 import Comment from "../models/comment";
 import { comment } from "postcss";
+import { convertTZ } from "../middlewares";
 
 //Global
 export const home = async (req, res) => {
@@ -151,6 +152,8 @@ export const postComment = async (req, res) => {
       creator: user.id,
     });
     video.comments.push(newComment.id);
+    newComment.createAt = convertTZ(newComment.createAt, "Asia/Seoul");
+    newComment.save();
     video.save();
   } catch (error) {
     console.log(error);
