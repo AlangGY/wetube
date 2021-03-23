@@ -15303,22 +15303,38 @@ function playVideo() {
   if (video.paused) {
     video.play();
     videoThumbnail.style.opacity = 0;
-    playButton.innerHTML = '<i class="fas fa-pause"></i>';
 
     if (!videoPlayed) {
       videoPlayed = true;
       registerView();
     }
   } else {
-    video.pause();
-    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    if (video.play() !== undefined) {
+      video.play().then(function (_) {
+        // Automatic playback started!
+        // Show playing UI.
+        // We can now safely pause video...
+        video.pause();
+      })["catch"](function (error) {// Auto-play was prevented
+        // Show paused UI.
+      });
+    }
   }
+}
+
+function playButtonPlay() {
+  playButton.innerHTML = '<i class="fas fa-pause"></i>';
+}
+
+function playButtonPause() {
+  playButton.innerHTML = '<i class="fas fa-play"></i>';
 }
 
 function handleEndedVideo() {
   video.currentTime = 0;
   playButton.innerHTML = '<i class="fas fa-play"></i>';
-}
+} // Init
+
 
 function init() {
   // Show Controls
@@ -15326,6 +15342,8 @@ function init() {
   videoPlayer.addEventListener("mousemove", showControls); // Play,Stop Video
 
   playButton.addEventListener("click", playVideo);
+  video.addEventListener("play", playButtonPlay);
+  video.addEventListener("pause", playButtonPause);
   video.addEventListener("ended", handleEndedVideo); // Volume
 
   volumeButton.addEventListener("click", toggleVolume);

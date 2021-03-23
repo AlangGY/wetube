@@ -134,8 +134,15 @@ table {
   border-spacing: 0;
 }
 
+a:hover {
+  opacity: 0.8;
+}
+a:active {
+  opacity: 0.5;
+}
+
 main {
-  margin-top: 100px;
+  margin-top: 7vh;
   margin-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -183,7 +190,7 @@ main {
   border-top: none;
   top: 0;
   width: 100vw;
-  height: 80px;
+  height: 5vh;
   z-index: 3;
 }
 .header .header__column {
@@ -1128,6 +1135,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #a5a5a5;
+  padding-bottom: 5px;
 }
 .video_detail .video__block .video__info .video__sub a {
   display: -webkit-box;
@@ -1321,12 +1329,21 @@ footer {
   background-color: white;
   margin-right: 10px;
 }
+.video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:first-child img:hover {
+  opacity: 0.8;
+}
+.video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:first-child img:active {
+  opacity: 0.5;
+}
 .video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:nth-child(2) {
   width: 100%;
   position: relative;
   overflow-wrap: break-word;
 }
 .video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:nth-child(2):hover .video__comments-delete {
+  opacity: 1;
+}
+.video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:nth-child(2):hover:active .video__comments-delete {
   opacity: 1;
 }
 .video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:nth-child(2) li {
@@ -1417,6 +1434,38 @@ footer {
   }
   .video_detail .video__block {
     padding: 5px;
+  }
+  .video_detail .video__block .video__info h5 {
+    text-align: center;
+    font-size: 50px;
+  }
+  .video_detail .video__block .video__info .video__sub span {
+    font-size: 24px;
+  }
+  .video_detail .video__block .video__info .video__author img {
+    width: 150px;
+    height: 150px;
+  }
+  .video_detail .video__block .video__info .video__author a {
+    font-size: 32px;
+  }
+  .video_detail .video__block .video__info .video__description {
+    font-size: 32px;
+  }
+  .video_detail .video__comments {
+    font-size: 40px;
+  }
+  .video_detail .video__comments .video__comments-input img {
+    width: 100px;
+    height: 100px;
+  }
+  .video_detail .video__comments .video__comments-input input {
+    height: 80px;
+    font-size: 40px;
+  }
+  .video_detail .video__comments .video__comments-texts .video__comments-text .video__comments-column:first-child img {
+    width: 100px;
+    height: 100px;
   }
 }
 .form-container__edit {
