@@ -63,7 +63,7 @@ globalRouter.get(
   routes.kakaoCallback,
   passport.authenticate("kakao", {
     failureRedirect: routes.login,
-    successFlash: "알랑튜브에 오신걸 환영합니다.",
+    successFlash: "로그인 되었습니다.",
     failureFlash: "로그인에 실패하였습니다.",
   }),
   postKakaoLogin
