@@ -41,7 +41,7 @@
     "css-loader": "^5.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-flash": "github:RGBboy/express-flash",
+    "express-flash": "^0.0.2",
     "express-session": "^1.17.1",
     "fluent-ffmpeg": "^2.1.2",
     "get-blob-duration": "^1.1.2",
