@@ -721,6 +721,7 @@ a:active {
 }
 .form-container__edit form .record-container video {
   width: 100%;
+  height: 100%;
   background-color: black;
   margin-bottom: 5px;
 }
@@ -787,6 +788,7 @@ a:active {
 }
 .form-container__edit form .video__player video {
   width: 100%;
+  height: 100%;
 }
 .form-container__edit form .title,
 .form-container__edit form .description,
@@ -966,8 +968,6 @@ a:active {
   }
   .form-container__edit form .record-container video {
     width: 100%;
-    background-color: black;
-    margin-bottom: 20px;
   }
   .form-container__edit form .record-container button {
     display: -webkit-box;
@@ -2607,6 +2607,7 @@ footer {
 .video__player .video__player-video video {
   background-color: #e9e9fc;
   width: 100%;
+  height: 100%;
   max-height: 100%;
 }
 .video__player .video__player-video .video__player-controls {
