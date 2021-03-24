@@ -30,10 +30,7 @@ export const postJoin = async (req, res, next) => {
 };
 
 // GithubLogin
-export const githubLogin = passport.authenticate("github", {
-  successFlash: "로그인 되었습니다.",
-  failureFlash: "로그인에 실패하였습니다.",
-});
+export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
   const {
@@ -64,10 +61,7 @@ export const postGithubLogin = (req, res) => {
 };
 
 // FacebookLogin
-export const facebookLogin = passport.authenticate("facebook", {
-  successFlash: "로그인 되었습니다.",
-  failureFlash: "로그인에 실패하였습니다.",
-});
+export const facebookLogin = passport.authenticate("facebook");
 
 export const facebookLoginCallback = (
   accessToken,
@@ -85,10 +79,7 @@ export const postFacebookLogin = (req, res) => {
 };
 
 // KakaoLogin
-export const kakaoLogin = passport.authenticate("kakao", {
-  successFlash: "알랑튜브에 오신걸 환영합니다.",
-  failureFlash: "로그인에 실패하였습니다.",
-});
+export const kakaoLogin = passport.authenticate("kakao");
 
 export const kakaoLoginCallback = async (_, __, profile, done) => {
   const {

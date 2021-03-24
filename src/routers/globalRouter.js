@@ -39,21 +39,33 @@ globalRouter.get(routes.search, search);
 globalRouter.get(routes.github, githubLogin);
 globalRouter.get(
   routes.githubCallback,
-  passport.authenticate("github", { failureRedirect: routes.login }),
+  passport.authenticate("github", {
+    failureRedirect: routes.login,
+    successFlash: "로그인 되었습니다.",
+    failureFlash: "로그인에 실패하였습니다.",
+  }),
   postGithubLogin
 );
 //Facebook Login
 globalRouter.get(routes.facebook, facebookLogin);
 globalRouter.get(
   routes.facebookCallback,
-  passport.authenticate("facebook", { failureRedirect: routes.login }),
+  passport.authenticate("facebook", {
+    failureRedirect: routes.login,
+    successFlash: "로그인 되었습니다.",
+    failureFlash: "로그인에 실패하였습니다.",
+  }),
   postFacebookLogin
 );
 //Kakao Login
 globalRouter.get(routes.kakao, kakaoLogin);
 globalRouter.get(
   routes.kakaoCallback,
-  passport.authenticate("kakao", { failureRedirect: routes.login }),
+  passport.authenticate("kakao", {
+    failureRedirect: routes.login,
+    successFlash: "알랑튜브에 오신걸 환영합니다.",
+    failureFlash: "로그인에 실패하였습니다.",
+  }),
   postKakaoLogin
 );
 
