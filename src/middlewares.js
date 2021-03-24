@@ -127,7 +127,7 @@ const multerLocal = multer({
 });
 
 export const uploadLocal = multerLocal.single("video");
-// upload aws-S3
+// upload Avatar
 const multerAvatar = multer({
   storage: multerS3({
     s3,
@@ -138,6 +138,7 @@ const multerAvatar = multer({
 
 export const uploadAvatar = multerAvatar.single("avatar");
 
+// localMiddleware
 export const localMiddleware = (req, res, next) => {
   res.locals.siteName = "AlangTube";
   res.locals.routes = routes;

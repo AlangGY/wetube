@@ -26,6 +26,14 @@ export const search = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+  if (videos.length == 0) {
+    req.flash("error", `${searchingBy} 검색결과: 영상을 찾지 못했습니다.`);
+  } else {
+    req.flash(
+      "info",
+      `${searchingBy} 검색결과: ${videos.length}개의 영상을 찾았습니다.`
+    );
+  }
   // const searchingBy = req.query.term;
   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
@@ -54,6 +62,7 @@ export const postVideo_upload = async (req, res) => {
   });
   req.user.videos.push(newVideo.id);
   req.user.save();
+  req.flash("success", "영상 업로드를 시작합니다.");
   res.redirect(routes.video_detail(newVideo.id));
 };
 
@@ -99,8 +108,10 @@ export const postVideo_edit = async (req, res) => {
   } = req;
   try {
     await Video.findOneAndUpdate({ _id: id }, { title, description });
+    req.flash("success", "영상이 수정되었습니다.");
     res.redirect(routes.video_detail(id));
   } catch (error) {
+    req.flash("error", "영상 수정에 실패하였습니다.");
     res.redirect(routes.home);
   }
 };
@@ -116,7 +127,11 @@ export const video_delete = async (req, res) => {
     }
     await Video.findOneAndRemove({ _id: id });
     await deleteVideoS3(video.fileUrl, video.thumbnailUrl);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    req.flash("error", "영상 삭제에 실패하였습니다.");
+  }
+  req.flash("success", "영상이 삭제되었습니다.");
   res.redirect(routes.home);
 };
 

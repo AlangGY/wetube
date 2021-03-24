@@ -5,6 +5,7 @@ block content
     #js-variables
         if loggedUser
             span#js-currentUserName=loggedUser.name
+            span#js-currentUserUrl=`${routes.users}${routes.me}`
     .video_detail
         .video__block
             +videoPlayer({
@@ -34,7 +35,10 @@ block content
                 | comments
             .video__comments-input
                 if loggedUser
-                    img(src=loggedUser.avatarUrl)#js-commentInputImage
+                    if loggedUser.avatarUrl 
+                        img(src=loggedUser.avatarUrl)#js-commentInputImage
+                    else 
+                        img(src="/images/profiles/defaultProfile.png")#js-commentInputImage
                     form.video__comments-form#js-commentForm
                         input(type="text" placeholder="댓글 입력" name="comment")#js-commentInput
                         button(type="submit") 댓글

@@ -1,10 +1,11 @@
 import express from "express";
+import flash from "express-flash";
+import session from "express-session";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import passport from "passport";
-import session from "express-session";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
@@ -44,6 +45,8 @@ app.use(
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URL }),
   })
 );
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 

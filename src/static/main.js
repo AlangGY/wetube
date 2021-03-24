@@ -14847,6 +14847,9 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "handleDeleteButton": () => (/* binding */ handleDeleteButton)
+/* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -14855,7 +14858,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var deleteButtons = document.querySelectorAll(".js-commentDelete");
-
 var handleDeleteButton = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(event) {
     var commentId, request;
@@ -14920,6 +14922,7 @@ var commenttexts = document.querySelector("#js-commentsText");
 var commentInputImage = document.querySelector("#js-commentInputImage");
 var commentNumber = document.querySelector("#js-commentNumber");
 var currentUserName = document.querySelector("#js-currentUserName");
+var currentUserUrl = document.querySelector("#js-currentUserUrl");
 
 function convertTZ(date, tzString) {
   return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {
@@ -14940,22 +14943,29 @@ var fakeComment = function fakeComment(comment) {
   var videoCommentsColumn2 = document.createElement("div");
   var li = document.createElement("li");
   var img = document.createElement("img");
+  var a1 = document.createElement("a");
+  var a2 = document.createElement("a");
   var creatorName = document.createElement("span");
   var commentTime = document.createElement("span"); // add Class
 
   videoCommentsTextDiv.className = "video__comments-text";
   videoCommentsInfo.className = "video__comments-info";
   videoCommentsColumn1.className = "video__comments-column";
-  videoCommentsColumn2.className = "video__comments-column"; // set Value
+  videoCommentsColumn2.className = "video__comments-column";
+  img.className = "avatar"; // set Value
 
   img.src = commentInputImage.src;
   li.innerHTML = comment;
+  a1.href = currentUserUrl.innerHTML;
+  a2.href = currentUserUrl.innerHTML;
   creatorName.innerHTML = currentUserName.innerHTML;
   commentTime.innerHTML = getCurrentTime(); // append Child
 
-  videoCommentsInfo.append(creatorName, commentTime);
+  a1.appendChild(img);
+  a2.appendChild(creatorName);
+  videoCommentsInfo.append(a2, commentTime);
   videoCommentsColumn2.append(videoCommentsInfo, li);
-  videoCommentsColumn1.append(img);
+  videoCommentsColumn1.append(a1);
   videoCommentsTextDiv.append(videoCommentsColumn1, videoCommentsColumn2); // prepend to ul
 
   commenttexts.prepend(videoCommentsTextDiv); // Num up

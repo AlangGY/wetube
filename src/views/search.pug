@@ -3,12 +3,11 @@ include mixins/videoBlock
 
 block content
     .search__header 
-        h3 Searching for #{searchingBy}
+
     .search__videos 
         .videos__block
+            h3   #{searchingBy}
             .videos
-                if videos.length === 0
-                    h5 No Videos Found
                 each video in videos 
                     +videoBlock({
                         title: video.title,
